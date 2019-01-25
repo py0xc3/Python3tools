@@ -3,13 +3,10 @@ Python3tools
 
 Some useful Python 3 tools, tested for Linux
 
-General description
-~~~~~~~~~~~~~~~~~~~
+General: These tools were developed to solve previously occurred problems, not yet solved by other tools/modules
 
-These tools were developed to solve previously occurred problems, not yet solved by other tools/modules
 
-ChaChaPRNG
-~~~~~~~~~~
+``ChaChaPRNG``:
 
 Based on https://github.com/pyca/cryptography
 
@@ -21,8 +18,8 @@ This tool is only intended for Linux operating systems before Linux 4.8 (then us
 
 At this version, one derivation should not get more than 16 bytes at once. There is no limitation concerning the number of derivations.
 
-PyCryFI
-~~~~~~~
+
+``PyCryFI``:
 
 Based on https://github.com/pyca/cryptography
 
