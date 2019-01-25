@@ -23,7 +23,7 @@ At this version, one derivation should not get more than 16 bytes at once. There
 
 Based on https://github.com/pyca/cryptography
 
-This is a small encryption/decryption tool for files. It needs Python 3.6 or later.
+This is a small encryption/decryption tool for files. It needs Python 3.6 or later. Tested on Fedora 28.
 
 It uses ChaCha20 with 256 bit. Blake2s is used for password hashing. The tool implements password salts.
 
