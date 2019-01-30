@@ -33,8 +33,8 @@ As soon as ``cryptography`` has implemented Blake2b with variable output length,
 
 ``tviD``:
 
-This improvised script shall manage Sundtek's MediaTV. Individual channels and frequencies can be added and selected using the console. It will start VLC with the choosen channel automatically. Automatic channel scanning is yet not implemented, channels have to be added manually to the script. I
+This improvised script shall manage Sundtek's MediaTV. Individual channels and frequencies can be added and selected using the console. It will start VLC with the choosen channel automatically. Automatic channel scanning is yet not implemented, channels have to be added manually to the script. 
 
-f necessary, channel scanning as well as a GUI can be easily implemented using the doc of Sundtek in conjunction with ``os``, or ``subprocess`` modules.
+If necessary, channel scanning as well as a GUI can be easily implemented using the doc of Sundtek in conjunction with ``os``, or ``subprocess`` modules.
 
 It was developed/tested for Fedora Linux. The Sundtek driver for Linux has to be installed, also VLC Media Player.
