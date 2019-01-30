@@ -38,3 +38,5 @@ This improvised script shall manage Sundtek's MediaTV. Individual channels and f
 If necessary, channel scanning as well as a GUI can be easily implemented using the doc of Sundtek in conjunction with ``os``, or ``subprocess`` modules.
 
 It was developed/tested for Fedora Linux. The Sundtek driver for Linux has to be installed, also VLC Media Player.
+
+The initial channels are working in Germany as of 20190129
