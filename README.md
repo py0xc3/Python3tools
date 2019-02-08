@@ -27,9 +27,15 @@ This is a small encryption/decryption tool for files. It needs Python 3.6 or lat
 
 It uses ChaCha20 with 256 bit. Blake2s is used for password hashing. The tool implements password salts.
 
-The cryptographic security corresponds to 128 bit symmetric security, limited by Blake2s, but sufficient for today. 
+The cryptographic security corresponds to 128 bit symmetric security, limited by hash collision probability of Blake2s, but sufficient for today. 
 
 As soon as ``cryptography`` has implemented Blake2b with variable output length, I will upgrade the tool to 256 bit security.
+
+``PyCryFI transitional 256.py``:
+
+See ``PyCryFI``. This enhanced version uses Blake2b to reduce collision propability closer to 256 bit symmetric security. In order to reduce the key output to 256 bit (forced by ChaCha20) without variable output length, it uses XOR.
+
+This is a temporary version that is to be replaced when Blake2b of ``cryptography`` supports variable output lengths. As the version is mature and the symmetric security is higher than 128 bit, it can be used in practice instead of PyCryFI (... while both versions are secure for today).
 
 ``tviD``:
 
