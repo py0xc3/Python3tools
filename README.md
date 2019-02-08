@@ -31,7 +31,7 @@ The cryptographic security corresponds to 128 bit symmetric security, limited by
 
 As soon as ``cryptography`` has implemented Blake2b with variable output length, I will upgrade the tool to 256 bit security.
 
-``PyCryFI transitional 256.py``:
+``PyCryFI transitional 256``:
 
 See ``PyCryFI``. This enhanced version uses Blake2b to reduce collision propability closer to 256 bit symmetric security. In order to reduce the key output to 256 bit (forced by ChaCha20) without variable output length, it uses XOR.
 
