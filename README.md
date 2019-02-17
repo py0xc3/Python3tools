@@ -19,6 +19,13 @@ This tool is only intended for Linux operating systems before Linux 4.8 (then us
 At this version, one derivation should not get more than 16 bytes at once. There is no limitation concerning the number of derivations.
 
 
+``ChaChaPRNG enhanced``:
+
+See ChaChaPRNG above.
+
+Enhanced version that increases security through increased initial seed size and that also makes it a little bit harder to manipulate the entropy pool of the initial seed (e.g. when PRNG is used within virtual machines).
+
+
 ``PyCryFI``:
 
 Based on https://github.com/pyca/cryptography
@@ -31,11 +38,13 @@ The cryptographic security corresponds to 128 bit symmetric security, limited by
 
 As soon as ``cryptography`` has implemented Blake2b with variable output length, I will upgrade the tool to 256 bit security.
 
+
 ``PyCryFI transitional 256``:
 
 See ``PyCryFI``. This enhanced version uses Blake2b to reduce collision propability closer to 256 bit symmetric security. In order to reduce the key output to 256 bit (forced by ChaCha20) without variable output length, it uses XOR.
 
 This is a temporary version that is to be replaced when Blake2b of ``cryptography`` supports variable output lengths. As the version is mature and the symmetric security is higher than 128 bit, it can be used in practice instead of PyCryFI (... while both versions are secure for today).
+
 
 ``tviD``:
 
