@@ -16,6 +16,7 @@ from time import time
 from os import urandom
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import hashes
 
 class ChaChaPRNG(object):
     def __init__(self):
@@ -24,10 +25,15 @@ class ChaChaPRNG(object):
         c = str(time())
         nonce = bytes((a[len(a)-5:] + b[len(b)-5:] + c[len(c)-6:]), "UTF-8")
         key = urandom(32)
+        hasher = hashes.Hash(hashes.BLAKE2s(32), backend=default_backend())
+        hasher.update(key)
+        key = hasher.finalize()
         algorithm = algorithms.ChaCha20(key, nonce)
         cipher = Cipher(algorithm, mode=None, backend=default_backend())
         self.encryptor = cipher.encryptor()
     def getrand(self, length):
-        value = str(time())
-        random = self.encryptor.update(bytes(value[len(value)-length:], "UTF-8"))
+        random = ""
+        while len(random) != length:
+            value = str(time())
+            random = self.encryptor.update(bytes(value[len(value)-length:], "UTF-8"))
         return random

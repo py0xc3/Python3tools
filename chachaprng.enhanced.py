@@ -17,6 +17,7 @@ from time import sleep
 from os import urandom
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives import hashes
 
 class ChaChaPRNG(object):
     def __init__(self):
@@ -27,6 +28,9 @@ class ChaChaPRNG(object):
         key = urandom(32)
         sleep(0.1)
         key = key + urandom(32)
+        hasher = hashes.Hash(hashes.BLAKE2b(64), backend=default_backend())
+        hasher.update(key)
+        key = hasher.finalize()
         prekey = bytes()
         for bits in range(0,32,1):
             stream = [key[bits] ^ key[(bits+32)]]
@@ -37,6 +41,9 @@ class ChaChaPRNG(object):
         cipher = Cipher(algorithm, mode=None, backend=default_backend())
         self.encryptor = cipher.encryptor()
     def getrand(self, length):
-        value = str(time())
-        random = self.encryptor.update(bytes(value[len(value)-length:], "UTF-8"))
+        random = ""
+        while len(random) != length:
+            value = str(time())
+            random = self.encryptor.update(bytes(value[len(value)-length:], "UTF-8"))
         return random
+
