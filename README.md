@@ -1,6 +1,12 @@
 Python3tools
 ============
 
+
+``Python3tools was **moved to GitLab** and will **no longer** be maintained on GitHub. Now, the repository **will be maintained** here: https://gitlab.com/py0xc3/Python3tools``
+
+``This repository will no longer be maintained!``
+
+
 Some useful Python 3 tools, tested for Linux
 
 General: These tools were developed to solve previously occurred problems, not yet solved by other tools/modules
