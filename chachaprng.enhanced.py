@@ -21,13 +21,8 @@ from cryptography.hazmat.primitives import hashes
 
 class ChaChaPRNG(object):
     def __init__(self):
-        a = str(time())
-        b = str(time())
-        c = str(time())
-        nonce = bytes((a[len(a)-5:] + b[len(b)-5:] + c[len(c)-6:]), "UTF-8")
-        key = urandom(32)
-        sleep(0.1)
-        key = key + urandom(32)
+        nonce = bytes(token_hex(8), "utf-8")
+        key = bytes(token_hex(32), "utf-8")
         hasher = hashes.Hash(hashes.BLAKE2b(64), backend=default_backend())
         hasher.update(key)
         key = hasher.finalize()
@@ -43,7 +38,6 @@ class ChaChaPRNG(object):
     def getrand(self, length):
         random = ""
         while len(random) != length:
-            value = str(time())
+            value = str(time())+token_hex(22)+str(time())
             random = self.encryptor.update(bytes(value[len(value)-length:], "UTF-8"))
         return random
-
