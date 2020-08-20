@@ -94,3 +94,5 @@ The template assumes the certificate to be in a file ("pubkey.crt"). It can be a
 ``getRootUsers.py``:
 
 An ugly-scripted tool that identifies and lists all root-privileged accounts, and accounts that can potentially claim root-privileges under several circumstances. The tool considers /etc/passwd, /etc/shadow and /etc/group but not yet /etc/sudoers and /etc/sudoers.d/*. 
+  
+When an attacker obtained root-privileges, these files offer well opportunities to permanently establish root access, even if the initial attack vector was fixed.
