@@ -90,3 +90,7 @@ Based on https://github.com/pyca/cryptography
 A template for [OCSP](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol) that imports the OCSP implementation from ``cryptography``. This was developed and tested in January of 2019! Therefore, it is not tested against contemporary ``cryptography`` functions.  
   
 The template assumes the certificate to be in a file ("pubkey.crt"). It can be adjusted to get the certificate directly using HTTP(S).
+
+``getRootUsers.py``:
+
+An ugly-scripted tool that identifies and lists all root-privileged accounts, and accounts that can potentially claim root-privileges under several circumstances. The tool considers /etc/passwd, /etc/shadow and /etc/group but not yet /etc/sudoers and /etc/sudoers.d/*. 
