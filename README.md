@@ -6,7 +6,7 @@ Useful Python 3 tools that proved to be helpful for some tasks, committed as dep
 Some will work standalone, some need to be integrated and adjusted. 
 If not noted differently, they are tested under Fedora Linux and considered testing! 
 Most tools are not maintained after committed! 
-Do not use any tool in production environments without reviewing the code and its modules for contemporary issues. Be aware that the [security of some tools depends on the environment and fits only for particular purposes while being vulnerable in others](https://en.wikipedia.org/wiki/Side-channel_attack)! 
+Do not use any tool in production environments without reviewing the code and its modules for issues around compatibility or vulnerabilities that were not applicable/known/relevant at the time of development. Be aware that the [security of some tools depends on the environment and fits only for particular purposes while being vulnerable in others](https://en.wikipedia.org/wiki/Side-channel_attack)! 
 Review [issues](https://github.com/py0xc3/Python3tools/issues) before deployment.     
 
 
